@@ -42,6 +42,11 @@ body::-webkit-scrollbar-thumb:hover {
     cursor: default;
 }
 
+a{
+    text-decoration: none;
+}
+
+
 .icon img, .link{
     cursor: pointer;
 }
@@ -82,12 +87,12 @@ header nav{
     color: var(--white);
 }
 
-.link::after, .icon::after{
+.link::after, .icon::after, .hamburger-link-text::after{
     content: " ";
     display: inline-block;
     position: absolute;
     height: 3px;
-    width: 0;
+    width: 0px;
     background-color: var(--white);
     bottom: -5px;
     left: 50%;
@@ -95,18 +100,72 @@ header nav{
     transition: width 0.3s;
 }
 
-.link:hover::after, .icon:hover::after{
+.link:hover::after, .icon:hover::after, .hamburger-link-text:hover::after{
     width: 100%;
     background-color: var(--white);
 }
 
 .box-container{
-    padding: 8rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 50vh;
     user-select: none;
 }
 
+.hamburger{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* display: none; */
+    height: 3rem;
+    width: 3rem;
+}
+
+#hamburger-icon, #close-icon{
+    display: inline;
+    color: var(--white);
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    user-select: none;
+    cursor: pointer;
+}
+
+.hamburger-links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-evenly;
+    width: 100%;
+    background-color: var(--black);
+    padding: 1rem 0;
+    min-height: 0;
+    /* overflow-y: hidden; */
+
+    transition-property: height;
+    transition-delay: 1s;
+}
+
+.hamburger-link{
+    color: var(--white);
+    font-size: 1.5rem;
+    background-color: var(--black);
+    padding: 0 2rem;
+    cursor: pointer;
+}
+
+.hamburger-link-text{
+    position: relative;
+    cursor: pointer;
+}
+
+
 .message-box{
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
+    min-height: 30vh;
     padding: 4rem 2rem;
     border: 3px solid var(--white);
     color: var(--white);
@@ -292,4 +351,21 @@ footer{
 
 .copyright{
     color: var(--Very-dark-gray)
+}
+
+.hidden{
+    display: none !important;
+}
+
+.hamburger-active-background, .hamburger-active-background{
+    background-color: var(--black) !important;
+    background-image: none !important;
+}
+
+.hamburger-active-hide{
+    display: none !important;
+}
+
+.hamburger-list-active{
+    min-height: 100%;
 }
