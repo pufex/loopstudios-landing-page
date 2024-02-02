@@ -356,14 +356,20 @@ footer{
 }
 
 .icons{
+    position: relative;
     display: flex;
-    align-items: center;
+    height: auto;
+    width: auto;
     gap: 1rem;
 }
 
 .icon{
     position: relative;
-    height: 1rem;
+    height: auto;
+}
+
+.icon img{
+    height: 2rem;
     object-fit: contain;
 }
 
