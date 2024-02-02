@@ -1,4 +1,5 @@
-const header = document.querySelector("header");
+const headerContainer = document.querySelector(".header-container");
+const header = document.querySelector(".header-child");
 const hamburger = document.querySelector(".hamburger")
 const hamburgerIcon = document.querySelector("#hamburger-icon")
 const closeIcon = document.querySelector("#close-icon")
